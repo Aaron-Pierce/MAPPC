@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MAPPC Leaderboard</title>
+    <meta name="description" content="The online hub of the NHS MAPPC">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDB-mlfhaCsZ5pj51VjkOg_47KtIF7QQwI",
+            authDomain: "mappc-a1865.firebaseapp.com",
+            databaseURL: "https://mappc-a1865.firebaseio.com",
+            projectId: "mappc-a1865",
+            storageBucket: "mappc-a1865.appspot.com",
+            messagingSenderId: "118886670317"
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+
+<body>
+    <div class="cardWrapper">
+        <div class="innerCard">
+            <div class="row" style="width: 100%">
+                <ul class="tabs">
+                    <li class="tab col s3"><a href="#test1">A Level</a></li>
+                    <li class="tab col s3"><a href="#test2">B Level</a></li>
+                    <li class="tab col s3"><a href="#test3">C Level</a></li>
+                    <li class="tab col s3"><a href="#test4">Open</a></li>
+                </ul>
+                <div id="test1" class="col s12 tabContent">
+                    <div class="tabWrapper">
+                        <ul class="tabs">
+                            <li class="tab col s3"><a class="active" href="#aLive">Live</a></li>
+                            <li class="tab col s3"><a href="#aLegacy">Legacy</a></li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div id="aLive" class="col s12 tabContent">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Correct</th>
+                                    <th>Incorrect</th>
+                                    <th>Total Attempted</th>
+                                    <th>% of attempted problems correctly answered</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="aLiveTableData">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="aLegacy" class="col s12 tabContent">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Correct</th>
+                                    <th>Incorrect</th>
+                                    <th>Total Attempted</th>
+                                    <th>% of attempted problems correctly answered</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="aLegacyTableData">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="test2" class="col s12 tabContent">
+                    <div class="tabWrapper">
+
+                        <ul class="tabs">
+                            <li class="tab col s3"><a class="active" href="#bLive">Live</a></li>
+                            <li class="tab col s3"><a href="#bLegacy">Legacy</a></li>
+                        </ul>
+                        <hr>
+                    </div>
+                    <div id="bLive" class="col s12 tabContent">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Correct</th>
+                                    <th>Incorrect</th>
+                                    <th>Total Attempted</th>
+                                    <th>% of attempted problems correctly answered</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="bLiveTableData">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="bLegacy" class="col s12 tabContent">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Correct</th>
+                                    <th>Incorrect</th>
+                                    <th>Total Attempted</th>
+                                    <th>% of attempted problems correctly answered</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="bLegacyTableData">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="test3" class="col s12 tabContent">
+                    <div class="tabWrapper">
+                        <ul class="tabs">
+                            <li class="tab col s3"><a class="active" href="#cLive">Live</a></li>
+                            <li class="tab col s3"><a href="#cLegacy">Legacy</a></li>
+                        </ul>
+                        <hr>
+                        <div id="cLive" class="col s12 tabContent">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Rank</th>
+                                        <th>Name</th>
+                                        <th>Correct</th>
+                                        <th>Incorrect</th>
+                                        <th>Total Attempted</th>
+                                        <th>% of attempted problems correctly answered</th>
+                                    </tr>
+                                </thead>
+    
+                                <tbody id="cLiveTableData">
+    
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="cLegacy" class="col s12 tabContent">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Rank</th>
+                                        <th>Name</th>
+                                        <th>Correct</th>
+                                        <th>Incorrect</th>
+                                        <th>Total Attempted</th>
+                                        <th>% of attempted problems correctly answered</th>
+                                    </tr>
+                                </thead>
+    
+                                <tbody id="cLegacyTableData">
+    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div id="test4" class="col s12 tabContent">Test 4</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/index.js" async defer></script>
+</body>
+
+</html>

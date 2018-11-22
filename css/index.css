@@ -1,0 +1,103 @@
+body{
+    background-color: #272a2f;
+    width: 99%;
+    height: 99%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #dedbd2;
+}
+
+
+.cardWrapper{
+    width: 70vw;
+    box-shadow: 15px 10px 50px black;
+    background-color: #dedbd2;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.25%;
+    padding-bottom: 0.25%;
+}
+
+
+@media (max-width: 1000px){
+    .cardWrapper{
+        width: 98vw;
+        box-shadow: 15px 10px 50px black;
+        background-color: #dedbd2;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0.25%;
+        padding-bottom: 0.25%;
+    }
+}
+
+.innerCard{
+    width: 99%;
+    height: 99%;
+    border: 2px solid #272a2f;
+    color: rgba(0,0,0,.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    overflow:scroll
+}
+
+.innerCard > h1{
+    font-weight: bold;
+    font-size: 2.5vw;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 0.5%
+}
+.tabs{
+    width: 100%!important
+}
+.tabs2{
+    width: 100%;
+}
+.tab{
+    display: flex!important;
+    flex-direction: column!important;
+    align-items: center!important;
+    justify-content: center!important;
+    padding: 0!important;
+}
+
+.tabs .tab a{
+    color: #e7d2a1;
+    background-color: #272a2f;
+    text-align: center
+}
+.tabs{
+    background-color: #dedbd2
+}
+
+.tabs .tab a:hover {
+    background-color:#e7d2a1;
+    color:#000;
+} /*Text color on hover*/
+
+.tabs .tab a.active {
+    background-color:#dedbd2;
+    color:#000;
+} /*Background and text color when a tab is active*/
+
+.tabs .indicator {
+    background-color:#272a2f;
+} /*Color of underline*/
+
+.tabs .active{
+    /* background-color: #e7d2a1!important; */
+}
+.tabContent{
+    padding: 0!important;
+}
