@@ -6,6 +6,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     color: #dedbd2;
 }
 
@@ -49,7 +51,8 @@ body{
     align-items: center;
     justify-content: center;
     padding: 2%;
-    overflow:scroll
+    overflow-y: auto;
+    overflow-x: auto;
 }
 
 .innerCard > h1{

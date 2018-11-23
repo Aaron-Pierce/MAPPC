@@ -115,7 +115,7 @@ players.get().then(function (data) {
                     <td>${getScore(player)}</td>
                     <td>${player.aCorrect + player.bCorrect + player.cCorrect}</td>
                     <td>${player.aCorrect + player.aWrong + player.bCorrect + player.bWrong + player.cCorrect + player.cWrong }</td>
-                    <td>${((player.aCorrect + player.bCorrect + player.cCorrect) / (player.aCorrect + player.aWrong + player.bCorrect + player.bWrong + player.cCorrect + player.cWrong )).toFixed(2) * 100}%</td>
+                    <td>${((player.aCorrect + player.bCorrect + player.cCorrect) / (player.aCorrect + player.aWrong + player.bCorrect + player.bWrong + player.cCorrect + player.cWrong )).toFixed(2) * 100 || 100}%</td>
                     <td>${player.aCorrect}</td>
                     <td>${player.aWrong}</td>
                     <td>${(player.aCorrect / (player.aCorrect + player.aWrong)).toFixed(2) * 100 || 100}%</td>

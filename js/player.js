@@ -140,6 +140,7 @@ function addPlayer() {
         bWrong: 0,
         cCorrect: 0,
         cWrong: 0,
+        notes: ""
 
     })
 
