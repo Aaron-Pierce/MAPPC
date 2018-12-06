@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MAPPC Packet Redirect</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDB-mlfhaCsZ5pj51VjkOg_47KtIF7QQwI",
+            authDomain: "mappc-a1865.firebaseapp.com",
+            databaseURL: "https://mappc-a1865.firebaseio.com",
+            projectId: "mappc-a1865",
+            storageBucket: "mappc-a1865.appspot.com",
+            messagingSenderId: "118886670317"
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <h1>Redirecting to packet...</h1>
+    <script>
+        let db = firebase.firestore();
+        const settings = {
+            timestampsInSnapshots: true
+        }
+        db.settings(settings)
+
+        let players = db.collection("packets");
+        players.get().then(function(docs){
+            console.log(docs.docs)
+            let biggestDoc = docs.docs[0];
+            for(doc of docs.docs){
+                if(doc.data().number > biggestDoc.data().number){
+                    biggestDoc = doc;
+                }
+            }
+            window.location.assign(biggestDoc.data().url)
+        });
+    </script>
+</body>
+
+</html>
